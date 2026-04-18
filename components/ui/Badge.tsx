@@ -18,32 +18,22 @@ export default function Badge({ name, emoji, earned, description }: Props) {
       transition={{ type: "spring", stiffness: 260, damping: 18 }}
       onHoverStart={() => setHover(true)}
       onHoverEnd={() => setHover(false)}
-      className="relative flex flex-col items-center gap-2 p-4 rounded-2xl"
+      className="relative flex flex-col items-center gap-2 p-4 rounded-2xl cursor-default"
       style={{
         background: earned
-          ? "linear-gradient(135deg, rgba(124,58,237,0.25), rgba(236,72,153,0.2))"
-          : "rgba(26,26,50,0.5)",
+          ? "linear-gradient(135deg, rgba(10,112,117,0.12), rgba(20,184,196,0.1))"
+          : "rgba(203,232,236,0.3)",
         border: earned
-          ? "1px solid rgba(167,139,250,0.5)"
-          : "1px solid #1A1A32",
-        boxShadow: earned ? "0 0 32px -8px rgba(124,58,237,0.6)" : "none",
+          ? "1.5px solid rgba(10,112,117,0.45)"
+          : "1.5px solid #CBE8EC",
+        boxShadow: earned ? "0 0 24px -6px rgba(10,112,117,0.35)" : "none",
       }}
     >
-      <div className={`text-4xl ${earned ? "" : "grayscale opacity-40"}`}>
-        {emoji}
-      </div>
-      {!earned && (
-        <div className="absolute top-2 right-2 text-sm">🔒</div>
-      )}
-      <div
-        className={`text-sm font-medium text-center ${
-          earned ? "text-text" : "text-muted"
-        }`}
-      >
-        {name}
-      </div>
+      <div className={`text-4xl ${earned ? "" : "grayscale opacity-40"}`}>{emoji}</div>
+      {!earned && <div className="absolute top-2 right-2 text-sm">🔒</div>}
+      <div className={`text-sm font-medium text-center ${earned ? "text-text" : "text-muted"}`}>{name}</div>
       {hover && description && (
-        <div className="absolute -top-12 left-1/2 -translate-x-1/2 bg-card border border-border rounded-lg px-3 py-1.5 text-xs text-text whitespace-nowrap z-10">
+        <div className="absolute -top-12 left-1/2 -translate-x-1/2 bg-white border border-border rounded-lg px-3 py-1.5 text-xs text-text whitespace-nowrap z-10 shadow-lg">
           {description}
         </div>
       )}

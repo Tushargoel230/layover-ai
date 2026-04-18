@@ -13,7 +13,7 @@ The last travel app you will ever need. AI plans your trip inside your budget, f
    If you do not have Homebrew: /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 2. Clone the repository
-   git clone https://github.com/YOUR_USERNAME/layover-ai.git
+   git clone https://github.com/Tushargoel230/layover-ai.git
 
 3. Enter the project folder
    cd layover-ai
@@ -33,7 +33,7 @@ The last travel app you will ever need. AI plans your trip inside your budget, f
 2. Open Command Prompt or PowerShell
 
 3. Clone the repository
-   git clone https://github.com/YOUR_USERNAME/layover-ai.git
+   git clone https://github.com/Tushargoel230/layover-ai.git
 
 4. Enter the project folder
    cd layover-ai
