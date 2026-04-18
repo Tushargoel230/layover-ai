@@ -25,20 +25,20 @@ export default function AchievementsPage() {
       <Card className="p-6 md:p-8 mb-12">
         <div className="flex flex-col md:flex-row items-center md:items-start gap-6">
           <div className="w-24 h-24 rounded-full flex items-center justify-center text-3xl font-bold text-white"
-            style={{ background: "linear-gradient(135deg, #FF8C42, #FF6B6B)" }}>
+            style={{ background: "linear-gradient(135deg, #0A7075, #14B8C4)" }}>
             JX
           </div>
           <div className="flex-1 text-center md:text-left">
             <div className="text-2xl font-bold font-spaceGrotesk">Jaxx</div>
             <div className="flex flex-wrap gap-2 mt-2 justify-center md:justify-start">
-              <span className="text-xs bg-coral/10 text-coral px-3 py-1 rounded-full font-semibold">Explorer · Level 12</span>
-              <span className="text-xs bg-sunshine/20 text-sunset px-3 py-1 rounded-full font-semibold">2,840 LVR Points</span>
+              <span className="text-xs bg-primary/10 text-primary px-3 py-1 rounded-full font-semibold">Explorer · Level 12</span>
+              <span className="text-xs bg-palm/10 text-palm px-3 py-1 rounded-full font-semibold">2,840 ATL Points</span>
             </div>
             <div className="mt-4">
               <div className="flex justify-between text-xs text-muted mb-1"><span>Progress to Level 13</span><span>2,840 / 3,000</span></div>
               <div className="h-2 bg-border rounded-full overflow-hidden">
                 <motion.div initial={{ width: 0 }} animate={{ width: `${(2840 / 3000) * 100}%` }} transition={{ duration: 1 }}
-                  className="h-full bg-gradient-to-r from-sunset to-coral" />
+                  className="h-full bg-gradient-to-r from-primary to-primaryLight" />
               </div>
             </div>
           </div>
@@ -47,7 +47,7 @@ export default function AchievementsPage() {
         <div className="grid grid-cols-3 gap-3 mt-8">
           {[{v:"7",l:"Countries"},{v:"12",l:"Trips"},{v:"4",l:"Badges This Year"}].map((s) => (
             <div key={s.l} className="p-4 bg-bg rounded-xl text-center border border-border">
-              <div className="text-2xl font-bold font-spaceGrotesk gradient-text">{s.v}</div>
+              <div className="text-2xl font-bold font-spaceGrotesk gradient-text-teal">{s.v}</div>
               <div className="text-xs text-muted mt-1">{s.l}</div>
             </div>
           ))}
@@ -94,12 +94,12 @@ export default function AchievementsPage() {
                 <th className="py-3 pr-4">Name</th>
                 <th className="py-3 pr-4">Countries</th>
                 <th className="py-3 pr-4">Trips</th>
-                <th className="py-3">LVR Score</th>
+                <th className="py-3">ATL Score</th>
               </tr>
             </thead>
             <tbody>
               {leaderboard.map((r, i) => (
-                <tr key={r.rank} className={r.me ? "bg-coral/10 text-coral" : ""}>
+                <tr key={r.rank} className={r.me ? "bg-primary/8 text-primary" : ""}>
                   <td className="py-3 pr-4">
                     <motion.span initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.08 }}
                       className="font-bold inline-block">
@@ -109,7 +109,7 @@ export default function AchievementsPage() {
                   <td className="py-3 pr-4 font-medium">{r.name}</td>
                   <td className="py-3 pr-4">{r.countries}</td>
                   <td className="py-3 pr-4">{r.trips}</td>
-                  <td className="py-3 font-bold">{r.score.toLocaleString()}</td>
+                  <td className="py-3 font-bold">{r.score.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</td>
                 </tr>
               ))}
             </tbody>
@@ -136,9 +136,9 @@ export default function AchievementsPage() {
             <motion.div initial={{ scale: 0.9, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} exit={{ scale: 0.9, opacity: 0 }}
               onClick={(e) => e.stopPropagation()}
               className="w-full max-w-sm rounded-2xl p-6 text-center bg-white shadow-2xl"
-              style={{ border: "2px solid #FF8C42", boxShadow: "0 0 60px -10px rgba(255,140,66,0.4)" }}>
+              style={{ border: "2px solid #0A7075", boxShadow: "0 0 60px -10px rgba(10,112,117,0.3)" }}>
               <div className="w-20 h-20 mx-auto rounded-full flex items-center justify-center text-2xl font-bold text-white mb-3"
-                style={{ background: "linear-gradient(135deg, #FF8C42, #FF6B6B)" }}>
+                style={{ background: "linear-gradient(135deg, #0A7075, #14B8C4)" }}>
                 JX
               </div>
               <div className="text-xl font-bold font-spaceGrotesk text-text">Jaxx</div>
@@ -147,10 +147,10 @@ export default function AchievementsPage() {
                 {earnedBadges.map((b) => <span key={b.name} className="text-3xl">{b.emoji}</span>)}
               </div>
               <div className="text-sm text-text">
-                <span className="text-sunset font-bold">2,840</span> LVR · <span className="text-coral font-bold">{badges.filter(b => b.earned).length}</span> Badges
+                <span className="text-primaryLight font-bold">2,840</span> ATL · <span className="text-primary font-bold">{badges.filter(b => b.earned).length}</span> Badges
               </div>
               <div className="flex flex-col gap-2 mt-5">
-                <Button variant="primary" onClick={() => { navigator.clipboard?.writeText("https://layover.ai/u/jaxx"); setToast("Link copied! ✓"); setTimeout(() => setToast(""), 2000); }}>
+                <Button variant="primary" onClick={() => { navigator.clipboard?.writeText("https://atlas.ai/u/jaxx"); setToast("Link copied! ✓"); setTimeout(() => setToast(""), 2000); }}>
                   Copy Card Link
                 </Button>
                 <Button variant="secondary" onClick={() => { setToast("Feature coming soon! 🚀"); setTimeout(() => setToast(""), 2000); }}>

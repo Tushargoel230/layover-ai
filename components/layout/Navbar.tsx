@@ -35,18 +35,15 @@ export default function Navbar() {
       <header className={`sticky top-0 z-40 transition-all duration-300 ${
         transparent
           ? "bg-transparent"
-          : "bg-white/85 backdrop-blur-xl shadow-sm border-b border-border"
+          : "bg-white/90 backdrop-blur-xl shadow-sm border-b border-border"
       }`}>
         <nav className="max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6 py-4">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-1 select-none">
-            <span
-              className={transparent ? "text-white" : "gradient-text-teal"}
-              style={{ fontFamily: "var(--font-dancing)", fontSize: "2rem", lineHeight: 1 }}
-            >
-              Layover
+          <Link href="/" className="flex items-center gap-0.5 select-none">
+            <span className={`font-spaceGrotesk font-black text-2xl tracking-tight ${transparent ? "text-white" : "text-primary"}`}>
+              Atlas
             </span>
-            <span className={`text-xs font-bold self-end pb-0.5 ${transparent ? "text-white/70" : "text-muted"}`}>
+            <span className={`text-xs font-bold self-end pb-0.5 ${transparent ? "text-white/60" : "text-muted"}`}>
               .ai
             </span>
           </Link>
@@ -69,15 +66,24 @@ export default function Navbar() {
             })}
           </ul>
 
-          {/* Mobile hamburger */}
-          <button
-            className={`lg:hidden p-2 rounded-xl border ${transparent ? "border-white/30 text-white" : "border-border bg-white/80 text-text"}`}
-            onClick={() => setOpen(true)} aria-label="Open menu"
-          >
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
-            </svg>
-          </button>
+          {/* CTA + hamburger */}
+          <div className="flex items-center gap-3">
+            <Link href="/demo" className={`hidden sm:inline-flex items-center gap-1.5 text-sm font-semibold rounded-full px-5 py-2.5 transition-all ${
+              transparent
+                ? "bg-white text-text hover:bg-white/90 shadow-lg"
+                : "bg-primary text-white hover:bg-primaryDark shadow-[0_4px_16px_-4px_rgba(10,112,117,0.5)]"
+            }`}>
+              Try Atlas ✈
+            </Link>
+            <button
+              className={`lg:hidden p-2 rounded-xl border ${transparent ? "border-white/30 text-white" : "border-border bg-white/80 text-text"}`}
+              onClick={() => setOpen(true)} aria-label="Open menu"
+            >
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+              </svg>
+            </button>
+          </div>
         </nav>
       </header>
 
@@ -91,8 +97,8 @@ export default function Navbar() {
             style={{ background: "linear-gradient(160deg, #094A4D, #0A7075)" }}
           >
             <div className="flex items-center justify-between mb-10">
-              <span className="text-white" style={{ fontFamily: "var(--font-dancing)", fontSize: "2rem" }}>
-                Layover<span className="text-base font-bold text-white/60">.ai</span>
+              <span className="font-spaceGrotesk font-black text-2xl text-white tracking-tight">
+                Atlas<span className="text-base font-bold text-white/60">.ai</span>
               </span>
               <button onClick={() => setOpen(false)} aria-label="Close"
                 className="p-2 rounded-xl border border-white/20 text-white">
@@ -115,6 +121,11 @@ export default function Navbar() {
                 );
               })}
             </ul>
+            <div className="mt-auto">
+              <Link href="/demo" className="block w-full text-center bg-white text-primary font-bold rounded-full py-4 text-lg">
+                Try Atlas ✈
+              </Link>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>

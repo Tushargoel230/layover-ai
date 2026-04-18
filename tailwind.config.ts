@@ -42,7 +42,6 @@ const config: Config = {
       fontFamily: {
         spaceGrotesk: ["var(--font-space-grotesk)", "sans-serif"],
         inter: ["var(--font-inter)", "sans-serif"],
-        dancing: ["var(--font-dancing)", "cursive"],
       },
     },
   },

@@ -158,6 +158,49 @@ input[type="date"]:focus { border-color: #0A7075; }
   background: rgba(10,112,117,0.7);
 }
 
+/* ── Hero search bar (pill with inner button) ── */
+.hero-search-wrap {
+  display: flex;
+  align-items: center;
+  background: rgba(10, 112, 117, 0.5);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1.5px solid rgba(255,255,255,0.25);
+  border-radius: 999px;
+  padding: 6px 6px 6px 22px;
+  width: 100%;
+  transition: border-color 0.2s, background 0.2s;
+}
+.hero-search-wrap:focus-within {
+  border-color: rgba(255,255,255,0.5);
+  background: rgba(10,112,117,0.65);
+}
+.hero-search-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 1rem;
+  outline: none;
+  padding: 0;
+  min-width: 0;
+}
+.hero-search-input::placeholder { color: rgba(255,255,255,0.6); }
+.hero-search-btn {
+  background: white;
+  color: #094A4D;
+  font-weight: 700;
+  font-size: 0.875rem;
+  border-radius: 999px;
+  padding: 0.6rem 1.4rem;
+  white-space: nowrap;
+  transition: background 0.2s;
+  flex-shrink: 0;
+  cursor: pointer;
+  border: none;
+}
+.hero-search-btn:hover { background: rgba(255,255,255,0.92); }
+
 /* ── Polaroid card ── */
 .polaroid {
   background: white;

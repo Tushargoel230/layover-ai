@@ -236,25 +236,25 @@ export const destinations: Destination[] = [
 // ─── Influencer Trips ────────────────────────────────────────────
 export const influencerTrips: InfluencerTrip[] = [
   {
-    user: "@jaxx", initials: "JX", followers: "48.2K",
-    destination: "Croatia", days: 7, price: 1650,
-    views: "312K", copies: 2100,
-    img: "https://images.unsplash.com/photo-1555990538-c4f5e0f5d2a0?w=600&auto=format&fit=crop",
-    tags: ["beach", "history", "nightlife"],
+    user: "@adil", initials: "AD", followers: "91.3K",
+    destination: "Paris, France", days: 6, price: 1850,
+    views: "520K", copies: 3800,
+    img: "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=800&auto=format&fit=crop",
+    tags: ["romance", "art", "food"],
   },
   {
     user: "@nelle", initials: "NL", followers: "22.1K",
-    destination: "Netherlands", days: 5, price: 1200,
+    destination: "Amsterdam, Netherlands", days: 5, price: 1200,
     views: "198K", copies: 1430,
-    img: "https://images.unsplash.com/photo-1534351590666-13e3e96b5017?w=600&auto=format&fit=crop",
-    tags: ["canals", "culture", "food"],
+    img: "https://images.unsplash.com/photo-1534351590666-13e3e96b5017?w=800&auto=format&fit=crop",
+    tags: ["canals", "culture", "cycling"],
   },
   {
-    user: "@adil", initials: "AD", followers: "91.3K",
-    destination: "Paris", days: 6, price: 1850,
-    views: "520K", copies: 3800,
-    img: "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=600&auto=format&fit=crop",
-    tags: ["romance", "art", "food"],
+    user: "@jaxx", initials: "JX", followers: "48.2K",
+    destination: "Berlin, Germany", days: 5, price: 1050,
+    views: "271K", copies: 1840,
+    img: "https://images.unsplash.com/photo-1560969184-10fe8719e047?w=800&auto=format&fit=crop",
+    tags: ["history", "nightlife", "food"],
   },
 ];
 

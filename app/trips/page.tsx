@@ -22,19 +22,19 @@ export default function TripsPage() {
   return (
     <div className="pt-12 pb-24">
       {/* Hero */}
-      <div className="relative overflow-hidden" style={{ background: "linear-gradient(135deg, #FEF3C7, #FFEDD5, #FFF8EC)" }}>
+      <div className="relative overflow-hidden" style={{ background: "linear-gradient(135deg, #EBF6F7, #F4FAFB)" }}>
         <motion.div
           animate={{ rotate: 360 }}
           transition={{ duration: 80, repeat: Infinity, ease: "linear" }}
-          className="absolute -top-24 -right-24 w-96 h-96 rounded-full opacity-25 pointer-events-none"
-          style={{ background: "radial-gradient(circle, #FBBF24, transparent 70%)" }}
+          className="absolute -top-24 -right-24 w-96 h-96 rounded-full opacity-20 pointer-events-none"
+          style={{ background: "radial-gradient(circle, #14B8C4, transparent 70%)" }}
         />
         <div className="max-w-5xl mx-auto px-4 sm:px-6 py-16 text-center relative">
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="inline-flex items-center gap-2 bg-coral/10 border border-coral/30 text-coral rounded-full px-4 py-1.5 text-sm font-semibold mb-4">
+          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="inline-flex items-center gap-2 bg-primary/10 border border-primary/30 text-primary rounded-full px-4 py-1.5 text-sm font-semibold mb-4">
             🗺️ Handpicked Trips
           </motion.div>
           <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }} className="text-4xl md:text-6xl font-bold font-spaceGrotesk mb-4">
-            Explore <span className="gradient-text">Curated Trips</span>
+            Explore <span className="gradient-text-teal">Curated Trips</span>
           </motion.h1>
           <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }} className="text-muted text-lg max-w-xl mx-auto mb-8">
             Full day-by-day itineraries, live weather, and real price ranges. One click to make any trip your own.
@@ -68,7 +68,7 @@ export default function TripsPage() {
                   <div className="text-white text-3xl font-bold font-spaceGrotesk">{trip.emoji} {trip.destination}</div>
                   <div className="text-white/80 text-sm mt-1">{trip.country}</div>
                 </div>
-                <div className="absolute top-4 right-4 flex flex-col gap-2">
+                <div className="absolute top-4 right-4">
                   <div className="bg-white/90 backdrop-blur rounded-full px-3 py-1.5 text-sm font-bold text-text">
                     ⭐ {trip.rating}
                   </div>
@@ -78,9 +78,9 @@ export default function TripsPage() {
               <div className="p-6">
                 {/* Stats row */}
                 <div className="flex flex-wrap gap-3 mb-5">
-                  <span className="bg-sunshine/20 text-sunset text-sm px-3 py-1 rounded-full">📅 {trip.dates}</span>
-                  <span className="bg-coral/10 text-coral text-sm px-3 py-1 rounded-full font-bold">💰 ${trip.price.min}–${trip.price.max}</span>
-                  <span className="bg-ocean/10 text-ocean text-sm px-3 py-1 rounded-full">🌙 {trip.days} days</span>
+                  <span className="bg-primary/10 text-primary text-sm px-3 py-1 rounded-full">📅 {trip.dates}</span>
+                  <span className="bg-primary/10 text-primary text-sm px-3 py-1 rounded-full font-bold">💰 ${trip.price.min}–${trip.price.max}</span>
+                  <span className="bg-primary/10 text-primary text-sm px-3 py-1 rounded-full">🌙 {trip.days} days</span>
                   <span className="bg-palm/10 text-palm text-sm px-3 py-1 rounded-full">👥 {trip.travelers} travelers</span>
                 </div>
 
@@ -112,13 +112,13 @@ export default function TripsPage() {
                           >
                             <div className="flex items-center gap-3">
                               <div className="w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold text-white"
-                                style={{ background: "linear-gradient(135deg, #FF8C42, #FF6B6B)" }}>
+                                style={{ background: "linear-gradient(135deg, #0A7075, #14B8C4)" }}>
                                 {d.day}
                               </div>
                               <span className="font-semibold text-sm">{d.title}</span>
                             </div>
                             <div className="flex items-center gap-2">
-                              <span className="text-coral text-sm font-bold">${dayTotal}</span>
+                              <span className="text-primary text-sm font-bold">${dayTotal}</span>
                               <motion.span animate={{ rotate: isOpen ? 180 : 0 }} className="text-muted">▾</motion.span>
                             </div>
                           </button>
@@ -140,7 +140,7 @@ export default function TripsPage() {
                                           <div className="text-xs text-muted capitalize">{a.time}</div>
                                         </div>
                                       </div>
-                                      <span className={a.cost === 0 ? "text-palm text-xs font-bold" : "text-coral text-sm font-bold"}>
+                                      <span className={a.cost === 0 ? "text-palm text-xs font-bold" : "text-primary text-sm font-bold"}>
                                         {a.cost === 0 ? "Free" : `$${a.cost}`}
                                       </span>
                                     </div>
@@ -154,7 +154,7 @@ export default function TripsPage() {
                     })}
                   </div>
                   <div className="mt-3 text-right text-sm text-muted">
-                    Estimated activity cost: <span className="text-coral font-bold">${totalCost}</span> (flights + hotels separate)
+                    Estimated activity cost: <span className="text-primary font-bold">${totalCost}</span> (flights + hotels separate)
                   </div>
                 </div>
 

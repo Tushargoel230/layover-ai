@@ -11,7 +11,7 @@ import { events, outfits } from "@/lib/data";
 type Step = "form" | "loading" | "results" | "share";
 type Tab = "itinerary" | "budget" | "events" | "outfits" | "group";
 
-const confettiColors = ["#FF6B6B", "#FF8C42", "#FBBF24", "#10B981", "#06B6D4", "#EC4899"];
+const confettiColors = ["#0A7075", "#14B8C4", "#FBBF24", "#10B981", "#06B6D4", "#0EA5E9"];
 
 export default function DemoPage() {
   const [step, setStep] = useState<Step>("form");
@@ -34,7 +34,7 @@ export default function DemoPage() {
           <motion.div key="loading" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
             className="flex flex-col items-center justify-center py-32">
             <div className="spinner" />
-            <div className="mt-6 text-muted">Layover AI is planning your trip... ✈️</div>
+            <div className="mt-6 text-muted">Atlas AI is planning your trip... ✈️</div>
           </motion.div>
         )}
 
@@ -109,7 +109,7 @@ export default function DemoPage() {
                       <div className="text-4xl my-4">{o.emojis}</div>
                       <div className="text-sm mb-4 text-text">{o.items}</div>
                       <div className="flex gap-2 mb-4 flex-wrap">
-                        <span className="text-xs bg-sunshine/20 text-sunset px-2 py-1 rounded-full">{o.weather}</span>
+                        <span className="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full">{o.weather}</span>
                         <span className="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full">{o.activity}</span>
                       </div>
                       <button className="w-full py-2 text-xs rounded-full border border-border hover:border-primary hover:text-primary transition-colors">
@@ -185,8 +185,8 @@ export default function DemoPage() {
 
             <Card className="p-4 mb-8">
               <div className="flex gap-2 items-center">
-                <input readOnly value="https://layover.ai/trip/rome-june-2026" className="flex-1 text-sm" />
-                <Button variant="primary" onClick={() => { navigator.clipboard?.writeText("https://layover.ai/trip/rome-june-2026"); setCopied(true); setTimeout(() => setCopied(false), 2000); }}>
+                <input readOnly value="https://atlas.ai/trip/rome-june-2026" className="flex-1 text-sm" />
+                <Button variant="primary" onClick={() => { navigator.clipboard?.writeText("https://atlas.ai/trip/rome-june-2026"); setCopied(true); setTimeout(() => setCopied(false), 2000); }}>
                   {copied ? "Copied! ✓" : "Copy Link"}
                 </Button>
               </div>
@@ -194,11 +194,11 @@ export default function DemoPage() {
 
             <motion.div initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4 }}
               className="relative rounded-2xl p-6 mb-8"
-              style={{ background: "linear-gradient(135deg, rgba(251,191,36,0.2), rgba(255,140,66,0.15))", border: "2px solid #FBBF24", boxShadow: "0 0 32px -6px rgba(251,191,36,0.5)" }}>
+              style={{ background: "linear-gradient(135deg, rgba(10,112,117,0.12), rgba(20,184,196,0.1))", border: "2px solid rgba(10,112,117,0.3)", boxShadow: "0 0 32px -6px rgba(10,112,117,0.3)" }}>
               <div className="text-4xl mb-2">🏆</div>
-              <div className="text-sm text-sunset uppercase tracking-widest mb-1 font-bold">Achievement Unlocked</div>
+              <div className="text-sm text-primary uppercase tracking-widest mb-1 font-bold">Achievement Unlocked</div>
               <div className="text-xl font-bold font-spaceGrotesk text-text">First Trip Created</div>
-              <div className="text-sm text-muted mt-2">+100 LVR Points ✨</div>
+              <div className="text-sm text-muted mt-2">+100 ATL Points ✨</div>
             </motion.div>
 
             <Button variant="secondary" onClick={() => setStep("form")}>Start New Trip</Button>

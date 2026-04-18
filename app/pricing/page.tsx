@@ -11,7 +11,7 @@ const tiers = [
   },
   {
     name: "Pro", monthly: "$4.99", annual: "$3.33", tagline: "billed annually at $39.99", cta: "Start Pro Free Trial", popular: true,
-    features: ["Everything in Free","Unlimited trips & group size","AI Budget Oracle","Outfit planner","Events & concerts discovery","Group wallet & split payments","Offline mode","Achievements & LVR points","Priority support","Trip memory book"],
+    features: ["Everything in Free","Unlimited trips & group size","AI Budget Oracle","Outfit planner","Events & concerts discovery","Group wallet & split payments","Offline mode","Achievements & ATL points","Priority support","Trip memory book"],
   },
   {
     name: "Business", monthly: "$29", annual: "$19", tagline: "per seat", cta: "Contact Sales",
@@ -27,7 +27,7 @@ const comparison = [
   { f:"Events discovery", free:"—", pro:"✅", biz:"✅" },
   { f:"Group wallet", free:"—", pro:"✅", biz:"✅" },
   { f:"Offline mode", free:"—", pro:"✅", biz:"✅" },
-  { f:"Achievements & LVR", free:"—", pro:"✅", biz:"✅" },
+  { f:"Achievements & ATL", free:"—", pro:"✅", biz:"✅" },
   { f:"Priority support", free:"—", pro:"✅", biz:"✅" },
   { f:"White-label API", free:"—", pro:"—", biz:"✅" },
   { f:"Analytics dashboard", free:"—", pro:"—", biz:"✅" },
@@ -35,12 +35,12 @@ const comparison = [
 ];
 
 const faqs = [
-  { q:"What is Layover Pro?", a:"Layover Pro unlocks unlimited trips, AI-powered budgeting, outfit planning, events discovery, group wallet payments, and achievements — everything you need for serious trip planning." },
+  { q:"What is Atlas Pro?", a:"Atlas Pro unlocks unlimited trips, AI-powered budgeting, outfit planning, events discovery, group wallet payments, and achievements — everything you need for serious trip planning." },
   { q:"Can I cancel anytime?", a:"Yes. Cancel with one click from your account settings. You'll retain Pro features until the end of your billing period." },
   { q:"How large can my group be?", a:"Free supports up to 3 travelers per trip. Pro and Business support unlimited group members." },
   { q:"Does offline mode work without internet?", a:"Yes. Pro users can cache the entire itinerary, map, and tickets for full offline access while abroad." },
   { q:"What is the refund policy?", a:"14-day no-questions-asked refund window on annual plans. Monthly plans can be cancelled anytime for immediate non-renewal." },
-  { q:"What is the Business API?", a:"Business tier includes a REST API for embedding Layover planning into your own apps, plus analytics, white-label branding, and a dedicated account manager." },
+  { q:"What is the Business API?", a:"Business tier includes a REST API for embedding Atlas planning into your own apps, plus analytics, white-label branding, and a dedicated account manager." },
 ];
 
 export default function PricingPage() {
@@ -51,15 +51,15 @@ export default function PricingPage() {
     <div className="pt-12 pb-20 max-w-6xl mx-auto px-4 sm:px-6">
       <div className="text-center mb-10">
         <h1 className="text-4xl md:text-6xl font-bold font-spaceGrotesk">
-          Simple <span className="gradient-text">pricing</span>
+          Simple <span className="gradient-text-teal">pricing</span>
         </h1>
         <p className="text-muted mt-4">Free forever. Pro unlocks everything. Business scales with you.</p>
       </div>
 
       <div className="flex justify-center mb-12">
         <div className="inline-flex bg-white border border-border rounded-full p-1 shadow-sm">
-          <button onClick={() => setAnnual(false)} className={`px-4 py-2 rounded-full text-sm transition ${!annual ? "bg-coral text-white shadow-sm" : "text-muted"}`}>Monthly</button>
-          <button onClick={() => setAnnual(true)} className={`px-4 py-2 rounded-full text-sm transition flex items-center gap-2 ${annual ? "bg-coral text-white shadow-sm" : "text-muted"}`}>
+          <button onClick={() => setAnnual(false)} className={`px-4 py-2 rounded-full text-sm transition ${!annual ? "bg-primary text-white shadow-sm" : "text-muted"}`}>Monthly</button>
+          <button onClick={() => setAnnual(true)} className={`px-4 py-2 rounded-full text-sm transition flex items-center gap-2 ${annual ? "bg-primary text-white shadow-sm" : "text-muted"}`}>
             Annual <span className="bg-palm/20 text-palm text-xs px-2 py-0.5 rounded-full">-33%</span>
           </button>
         </div>
@@ -69,13 +69,13 @@ export default function PricingPage() {
         {tiers.map((t) => (
           <motion.div key={t.name} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
             className={t.popular ? "md:scale-105" : ""}>
-            <Card className="p-8 h-full relative" color={t.popular ? "#FF6B6B" : "#FF8C42"}>
+            <Card className="p-8 h-full relative" color={t.popular ? "#0A7075" : "#14B8C4"}>
               {t.popular && (
-                <div className="absolute -top-3 right-6 bg-gradient-to-r from-sunset to-pink text-white text-xs font-bold px-3 py-1 rounded-full shadow-sm">
+                <div className="absolute -top-3 right-6 bg-gradient-to-r from-primary to-primaryLight text-white text-xs font-bold px-3 py-1 rounded-full shadow-sm">
                   POPULAR
                 </div>
               )}
-              <div className={`text-sm uppercase tracking-widest ${t.popular ? "gradient-text font-bold" : "text-muted"}`}>{t.name}</div>
+              <div className={`text-sm uppercase tracking-widest ${t.popular ? "gradient-text-teal font-bold" : "text-muted"}`}>{t.name}</div>
               <div className="text-4xl font-bold font-spaceGrotesk mt-2 text-text">{annual ? t.annual : t.monthly}</div>
               <div className="text-muted text-sm mb-6">{t.name==="Free" ? t.tagline : annual ? "/month · " + t.tagline : "/month"}</div>
               <ul className="space-y-2 text-sm text-muted mb-6">
@@ -96,7 +96,7 @@ export default function PricingPage() {
               <tr className="text-muted text-xs uppercase tracking-widest text-left border-b border-border">
                 <th className="py-3 pr-4">Feature</th>
                 <th className="py-3 px-4 text-center">Free</th>
-                <th className="py-3 px-4 text-center gradient-text font-bold">Pro</th>
+                <th className="py-3 px-4 text-center gradient-text-teal font-bold">Pro</th>
                 <th className="py-3 px-4 text-center">Business</th>
               </tr>
             </thead>
@@ -124,7 +124,7 @@ export default function PricingPage() {
               <div key={f.q} className="bg-white border border-border rounded-xl overflow-hidden shadow-sm">
                 <button onClick={()=>setOpenFaq(open?null:i)} className="w-full text-left flex items-center justify-between p-5">
                   <span className="font-bold text-text">{f.q}</span>
-                  <motion.span animate={{ rotate: open ? 45 : 0 }} className="text-coral text-2xl">+</motion.span>
+                  <motion.span animate={{ rotate: open ? 45 : 0 }} className="text-primary text-2xl font-light">+</motion.span>
                 </button>
                 <AnimatePresence initial={false}>
                   {open && (

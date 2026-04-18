@@ -76,7 +76,7 @@ const features = [
   },
   {
     emoji: "🏆", tag: "Achievements & Rewards", headline: "Every trip earns you more.",
-    bullets: ["15 unique explorer badges","LVR points redeemable for discounts","Friends leaderboard","Shareable profile card","Bonus points for group trips"],
+    bullets: ["15 unique explorer badges","ATL points redeemable for discounts","Friends leaderboard","Shareable profile card","Bonus points for group trips"],
     mock: (
       <div className="grid grid-cols-3 gap-3 text-center text-xs">
         {["💰","🎉","🇪🇺","🌙","🍝","👥"].map((e,i)=>(
@@ -100,7 +100,7 @@ export default function FeaturesPage() {
         </motion.div>
         <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }}
           className="text-4xl md:text-6xl font-bold font-spaceGrotesk">
-          Features that make <br /><span className="gradient-text">Layover.ai irreplaceable</span>
+          Features that make <br /><span className="gradient-text">Atlas irreplaceable</span>
         </motion.h1>
         <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }}
           className="text-muted mt-5 text-lg max-w-2xl mx-auto">
@@ -119,11 +119,11 @@ export default function FeaturesPage() {
               transition={{ duration: 0.6 }}
               className={`grid md:grid-cols-2 gap-10 items-center ${reverse ? "md:[&>*:first-child]:order-2" : ""}`}>
               <div>
-                <div className="w-20 h-20 rounded-full flex items-center justify-center text-4xl mb-6"
-                  style={{ background: "linear-gradient(135deg, #FF8C42, #FF6B6B)" }}>
+                <div className="w-20 h-20 rounded-2xl flex items-center justify-center text-4xl mb-6"
+                  style={{ background: "linear-gradient(135deg, rgba(10,112,117,0.12), rgba(20,184,196,0.15))", border: "1px solid rgba(10,112,117,0.2)" }}>
                   {f.emoji}
                 </div>
-                <div className="inline-block text-xs tracking-widest uppercase text-coral border border-coral/40 bg-coral/5 rounded-full px-3 py-1 mb-3">{f.tag}</div>
+                <div className="inline-block text-xs tracking-widest uppercase text-primary border border-primary/30 bg-primary/5 rounded-full px-3 py-1 mb-3">{f.tag}</div>
                 <h2 className="text-3xl md:text-4xl font-bold font-spaceGrotesk mb-5">{f.headline}</h2>
                 <ul className="space-y-2">
                   {f.bullets.map(b=><li key={b} className="flex items-start gap-2 text-muted"><span className="text-palm mt-1">✓</span>{b}</li>)}
@@ -137,8 +137,8 @@ export default function FeaturesPage() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 mt-32">
         <div className="rounded-3xl p-10 md:p-16 text-center"
-          style={{ background: "linear-gradient(135deg, rgba(255,140,66,0.15), rgba(255,107,107,0.1), rgba(6,182,212,0.1))", border: "1.5px solid rgba(255,107,107,0.3)" }}>
-          <div className="text-5xl mb-4">🌴</div>
+          style={{ background: "linear-gradient(135deg, rgba(10,112,117,0.08), rgba(20,184,196,0.06))", border: "1.5px solid rgba(10,112,117,0.2)" }}>
+          <div className="text-5xl mb-4">🌍</div>
           <h2 className="text-3xl md:text-5xl font-bold font-spaceGrotesk mb-6">
             Ready to plan your first trip?
           </h2>

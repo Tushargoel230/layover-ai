@@ -26,7 +26,7 @@ function PhraseCard({ phrase }: { phrase: LanguagePhrase }) {
         </div>
         {/* Back */}
         <div className="flip-card-back flex flex-col justify-center items-center p-5 text-center"
-          style={{ background: "linear-gradient(135deg, #FEF3C7, #FFEDD5)", border: "1.5px solid #FDE68A" }}>
+          style={{ background: "linear-gradient(135deg, rgba(10,112,117,0.08), rgba(20,184,196,0.12))", border: "1.5px solid rgba(10,112,117,0.25)" }}>
           <div className="text-3xl mb-3">🔊</div>
           <div className="text-sm font-bold text-text mb-2">Pronunciation tip</div>
           <div className="text-muted text-sm">{phrase.tip}</div>
@@ -68,7 +68,7 @@ function QuizSection({ phrases }: { phrases: LanguagePhrase[] }) {
       <div className="text-6xl mb-4">{score >= 6 ? "🏆" : score >= 4 ? "🌟" : "💪"}</div>
       <div className="text-2xl font-bold font-spaceGrotesk">{score}/{quizPool.length} correct</div>
       <div className="text-muted mt-2">{score >= 6 ? "You're practically a local!" : score >= 4 ? "Getting there!" : "Keep practicing!"}</div>
-      <button onClick={restart} className="mt-6 bg-coral text-white rounded-full px-6 py-3 font-semibold hover:bg-sunset transition">Try Again</button>
+      <button onClick={restart} className="mt-6 bg-primary text-white rounded-full px-6 py-3 font-semibold hover:bg-primaryDark transition">Try Again</button>
     </motion.div>
   );
 
@@ -79,7 +79,7 @@ function QuizSection({ phrases }: { phrases: LanguagePhrase[] }) {
         <div className="text-sm font-bold text-palm">Score: {score}</div>
       </div>
       <div className="h-1.5 bg-border rounded-full mb-6 overflow-hidden">
-        <motion.div animate={{ width: `${((current + 1) / quizPool.length) * 100}%` }} className="h-full bg-gradient-to-r from-sunset to-coral" />
+        <motion.div animate={{ width: `${((current + 1) / quizPool.length) * 100}%` }} className="h-full bg-gradient-to-r from-primary to-primaryLight" />
       </div>
       <div className="text-center mb-6">
         <div className="text-xs text-muted uppercase tracking-widest mb-2">What does this mean?</div>
@@ -88,7 +88,7 @@ function QuizSection({ phrases }: { phrases: LanguagePhrase[] }) {
       </div>
       <div className="grid grid-cols-2 gap-3">
         {options.map((opt) => {
-          let bg = "bg-white border-border hover:border-coral hover:bg-coral/5";
+          let bg = "bg-white border-border hover:border-primary hover:bg-primary/5";
           if (selected) {
             if (opt === q.english) bg = "bg-palm/15 border-palm text-palm font-bold";
             else if (opt === selected) bg = "bg-red/15 border-red text-red";
@@ -115,10 +115,10 @@ export default function LanguagePage() {
   return (
     <div className="pt-12 pb-24">
       {/* Hero */}
-      <div className="relative overflow-hidden pb-16" style={{ background: "linear-gradient(135deg, #FEF3C7, #FFF8EC)" }}>
+      <div className="relative overflow-hidden pb-16" style={{ background: "linear-gradient(135deg, #EBF6F7, #F4FAFB)" }}>
         <motion.div animate={{ rotate: 360 }} transition={{ duration: 80, repeat: Infinity, ease: "linear" }}
           className="absolute -top-20 -right-20 w-80 h-80 rounded-full opacity-20 pointer-events-none"
-          style={{ background: "radial-gradient(circle, #FBBF24, transparent 70%)" }} />
+          style={{ background: "radial-gradient(circle, #14B8C4, transparent 70%)" }} />
         <div className="max-w-4xl mx-auto px-4 sm:px-6 pt-14 text-center relative">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
             className="inline-flex items-center gap-2 bg-ocean/10 border border-ocean/30 text-ocean rounded-full px-4 py-1.5 text-sm font-semibold mb-4">
@@ -142,7 +142,7 @@ export default function LanguagePage() {
           <div className="flex flex-wrap gap-2">
             {destinations.map((d) => (
               <button key={d} onClick={() => { setDest(d); setCat("Greetings"); }}
-                className={`flex items-center gap-2 px-4 py-2 rounded-full border text-sm font-medium transition-all ${dest === d ? "bg-coral text-white border-coral shadow-sm" : "bg-bg border-border text-muted hover:border-coral hover:text-coral"}`}>
+                className={`flex items-center gap-2 px-4 py-2 rounded-full border text-sm font-medium transition-all ${dest === d ? "bg-primary text-white border-primary shadow-sm" : "bg-bg border-border text-muted hover:border-primary hover:text-primary"}`}>
                 <span>{languagePacks[d].flag}</span> {d}
               </button>
             ))}
@@ -164,9 +164,9 @@ export default function LanguagePage() {
             <div className="flex gap-1 border-b border-border mb-6 overflow-x-auto">
               {availableCats.map((c) => (
                 <button key={c} onClick={() => setCat(c)}
-                  className={`px-4 py-2.5 text-sm whitespace-nowrap relative transition-colors ${cat === c ? "text-coral font-semibold" : "text-muted hover:text-text"}`}>
+                  className={`px-4 py-2.5 text-sm whitespace-nowrap relative transition-colors ${cat === c ? "text-primary font-semibold" : "text-muted hover:text-text"}`}>
                   {c}
-                  {cat === c && <motion.div layoutId="lang-tab" className="absolute bottom-0 left-0 right-0 h-0.5 bg-coral" />}
+                  {cat === c && <motion.div layoutId="lang-tab" className="absolute bottom-0 left-0 right-0 h-0.5 bg-primary" />}
                 </button>
               ))}
             </div>

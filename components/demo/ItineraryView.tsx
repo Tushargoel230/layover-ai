@@ -20,7 +20,7 @@ export default function ItineraryView() {
             <button onClick={() => toggle(d.day)} className="w-full flex items-center justify-between text-left">
               <div className="flex items-center gap-4">
                 <div className="w-12 h-12 rounded-full flex items-center justify-center font-bold text-white"
-                  style={{ background: "linear-gradient(135deg, #FF8C42, #FF6B6B)" }}>
+                  style={{ background: "linear-gradient(135deg, #0A7075, #14B8C4)" }}>
                   {d.day}
                 </div>
                 <div>
@@ -29,7 +29,7 @@ export default function ItineraryView() {
                 </div>
               </div>
               <div className="flex items-center gap-3">
-                <div className="text-coral font-bold text-sm">${total}</div>
+                <div className="text-primary font-bold text-sm">${total}</div>
                 <motion.span animate={{ rotate: isOpen ? 180 : 0 }} className="text-muted">▾</motion.span>
               </div>
             </button>
@@ -46,7 +46,7 @@ export default function ItineraryView() {
                             <div className="text-xs text-muted capitalize">{a.time}</div>
                           </div>
                         </div>
-                        <div className={a.cost === 0 ? "text-palm text-xs font-bold" : "text-coral text-sm font-bold"}>
+                        <div className={a.cost === 0 ? "text-palm text-xs font-bold" : "text-primary text-sm font-bold"}>
                           {a.cost === 0 ? "Free" : `$${a.cost}`}
                         </div>
                       </div>
